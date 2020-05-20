@@ -31,5 +31,10 @@
   "boilerplate.containers.LocaleToggle.es": "es",
   "boilerplate.containers.NotFoundPage.header": "Page not found.",
   "hrl.containers.HomePage.banner.description": "Use the housing assitance form below to search for housing assitance wherever you’d like: in your zip code, city, or across the country.",
-  "hrl.containers.HomePage.banner.heading": "Find Affordable Housing"
+  "hrl.containers.HomePage.banner.heading": "Find Affordable Housing",
+  "hrl.components.ResourceSearchForm.geoInputLabel": "Where would you like to look for housing assistance?",
+  "hrl.components.ResourceSearchForm.resourceInputLabel": "What type of housing assitance are you looking for?",
+  "hrl.components.ResourceSearchForm.resourceType.housing": "Affordable Housing",
+  "hrl.components.ResourceSearchForm.resourceType.shelter": "Shelter",
+  "hrl.components.ResourceSearchForm.submitValue": "Search for housing"
 }

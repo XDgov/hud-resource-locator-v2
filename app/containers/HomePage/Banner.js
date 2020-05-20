@@ -14,7 +14,7 @@ const BannerHeading = styled(H1)`
 `;
 
 const BannerContentContainer = styled.div`
-  max-width: 45rem;
+  max-width: 35rem;
 `;
 
 const BannerFormContainer = styled(FormContainer)`

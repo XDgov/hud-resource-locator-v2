@@ -6,5 +6,10 @@
   "boilerplate.containers.LocaleToggle.en": "en",
   "boilerplate.containers.LocaleToggle.es": "es",
   "hrl.containers.HomePage.banner.description": "Utilice el formulario de asistencia para vivienda a continuación para buscar asistencia para vivienda donde desee: en su código postal, ciudad o en todo el país.",
-  "hrl.containers.HomePage.banner.heading": "Encuentre asistencia de vivienda"
+  "hrl.containers.HomePage.banner.heading": "Encuentre asistencia de vivienda",
+  "hrl.components.ResourceSearchForm.geoInputLabel": "¿Dónde le gustaría buscar asistencia para la vivienda?",
+  "hrl.components.ResourceSearchForm.resourceInputLabel": "¿Qué tipo de asistencia de vivienda está buscando?",
+  "hrl.components.ResourceSearchForm.resourceType.housing": "Vivienda asequible",
+  "hrl.components.ResourceSearchForm.resourceType.shelter": "Refugios para desamparados",
+  "hrl.components.ResourceSearchForm.submitValue": "Busqueda de vivienda"
 }
