@@ -1,0 +1,10 @@
+{
+  "boilerplate.components.Footer.author.message": "Made with love by {author}.",
+  "boilerplate.components.Footer.license.message": "This project is licensed under the MIT license.",
+  "boilerplate.components.Header.features": "Features",
+  "boilerplate.components.Header.home": "Home",
+  "boilerplate.containers.LocaleToggle.en": "en",
+  "boilerplate.containers.LocaleToggle.es": "es",
+  "hrl.containers.HomePage.banner.description": "Utilice el formulario de asistencia para vivienda a continuación para buscar asistencia para vivienda donde desee: en su código postal, ciudad o en todo el país.",
+  "hrl.containers.HomePage.banner.heading": "Encuentre asistencia de vivienda"
+}

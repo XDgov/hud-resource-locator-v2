@@ -5,17 +5,16 @@
  */
 import { defineMessages } from 'react-intl';
 
-export const scope = 'boilerplate.containers.HomePage';
+export const scope = 'hrl.containers.HomePage';
 
 export default defineMessages({
-  startProjectHeader: {
-    id: `${scope}.start_project.header`,
-    defaultMessage: 'Start your next react project in seconds',
+  bannerDescription: {
+    id: `${scope}.banner.description`,
+    defaultMessage: 'Use the housing assitance form below to search for housing assitance wherever you’d like: in your zip code, city, or across the country.'
   },
-  startProjectMessage: {
-    id: `${scope}.start_project.message`,
-    defaultMessage:
-      'A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices',
+  bannerHeading: {
+    id: `${scope}.banner.heading`,
+    defaultMessage: 'Find Affordable Housing',
   },
   trymeHeader: {
     id: `${scope}.tryme.header`,

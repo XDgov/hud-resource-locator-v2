@@ -19,9 +19,11 @@ import {
   makeSelectLoading,
   makeSelectError,
 } from 'containers/App/selectors';
+import GridContainer from 'components/GridContainer';
 import H2 from 'components/H2';
 import ReposList from 'components/ReposList';
 import AtPrefix from './AtPrefix';
+import Banner from './Banner';
 import CenteredSection from './CenteredSection';
 import Form from './Form';
 import Input from './Input';
@@ -58,7 +60,7 @@ export function HomePage({
   };
 
   return (
-    <article>
+    <div>
       <Helmet>
         <title>Home Page</title>
         <meta
@@ -67,37 +69,9 @@ export function HomePage({
         />
       </Helmet>
       <div>
-        <CenteredSection>
-          <H2>
-            <FormattedMessage {...messages.startProjectHeader} />
-          </H2>
-          <p>
-            <FormattedMessage {...messages.startProjectMessage} />
-          </p>
-        </CenteredSection>
-        <Section>
-          <H2>
-            <FormattedMessage {...messages.trymeHeader} />
-          </H2>
-          <Form onSubmit={onSubmitForm}>
-            <label htmlFor="username">
-              <FormattedMessage {...messages.trymeMessage} />
-              <AtPrefix>
-                <FormattedMessage {...messages.trymeAtPrefix} />
-              </AtPrefix>
-              <Input
-                id="username"
-                type="text"
-                placeholder="mxstbr"
-                value={username}
-                onChange={onChangeUsername}
-              />
-            </label>
-          </Form>
-          <ReposList {...reposListProps} />
-        </Section>
+        <Banner />
       </div>
-    </article>
+    </div>
   );
 }
 
