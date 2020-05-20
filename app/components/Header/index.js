@@ -15,7 +15,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 
 const AppHeader = styled.header`
-  background: #3944D5;
+  background: #4939D5;
   padding: 0.5rem 0;
 `;
 

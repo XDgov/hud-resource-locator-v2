@@ -1,6 +1,8 @@
 import React, { useEffect, memo } from 'react';
 import styled from 'styled-components';
 
+import Submit from 'components/Submit';
+
 const FormLabel = styled.label`
   color: #ffffff;
   display: block;
@@ -44,7 +46,9 @@ class ResearchSearchForm extends React.Component {
           Where would you like to look for housing assistance?
           <PlaceInput type="text" value={this.state.value} onChange={this.handleGeoInputChange} />
         </FormLabel>
-        <input type="submit" value="Submit" />
+        <div>
+          <Submit type="submit" value="Search for housing" />
+        </div>
       </form>
     );
   }

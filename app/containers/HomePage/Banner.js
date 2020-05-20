@@ -18,7 +18,7 @@ const BannerContentContainer = styled.div`
 `;
 
 const BannerFormContainer = styled(FormContainer)`
-  border-color: #ffffff;
+  border-color: #747CE6;
 `;
 
 const BannerParagraph = styled.p`
@@ -27,7 +27,7 @@ const BannerParagraph = styled.p`
 `;
 
 const BannerSection = styled.section`
-  background: #3944D5;
+  background: #4939D5;
   padding-bottom: 4rem;
 `;
 
