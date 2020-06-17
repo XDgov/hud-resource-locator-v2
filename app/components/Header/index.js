@@ -84,12 +84,6 @@ function Header() {
           <NavLink href="/">
             <FontAwesomeIcon icon={faSearch} />
             <NavSpan>
-              Advanced Search
-            </NavSpan>
-          </NavLink>
-          <NavLink href="/">
-            <FontAwesomeIcon icon={faStream} />
-            <NavSpan>
               Previous Searches
             </NavSpan>
           </NavLink>

@@ -11,6 +11,7 @@ import styled from 'styled-components';
 const BannerHeading = styled(H1)`
   color: #ffffff;
   font-size: 3.75rem;
+  margin-top: 0;
 `;
 
 const BannerContentContainer = styled.div`
@@ -29,6 +30,7 @@ const BannerParagraph = styled.p`
 const BannerSection = styled.section`
   background: #4939D5;
   padding-bottom: 4rem;
+  padding-top: 1rem;
 `;
 
 export function Banner(){

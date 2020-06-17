@@ -5,7 +5,6 @@ const GridContainer = styled.div`
   margin: 0 auto;
   max-width: 800px;
   width: 100%;
-  overflow: hidden;
 
   @media(min-width: 1200px) {
     max-width: 1140px;

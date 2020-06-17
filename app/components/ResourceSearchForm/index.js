@@ -1,5 +1,6 @@
 import React, { useEffect, memo } from 'react';
 import { FormattedMessage } from 'react-intl';
+import PlaceList from 'components/PlaceList';
 import messages from './messages';
 import styled from 'styled-components';
 
@@ -28,6 +29,7 @@ const FormLegend = styled.legend`
 
 const InputGroup = styled.div`
   margin-bottom: 1rem;
+  position: relative;
 `;
 
 const PlaceInput = styled.input`
@@ -54,20 +56,36 @@ const SearchSubmit = styled(Submit)`
 class ResearchSearchForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = {geoInputValue: '', resourceInputValue: 'affordable-housing', showSuggestions: false};
 
     this.handleGeoInputChange = this.handleGeoInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleGeoInputChange(event) {
-    this.setState({value: event.target.value});
-    console.log(event.target.value)
+    this.updateGeoInputValue(event.target.value);
+
+    if(!!event.target.value && !!event.target.value.trim()) {
+      this.setState({showSuggestions: true});
+    } else {
+      this.setState({showSuggestions: false});
+    }
+  }
+
+  handleGeoInputBlur = (event) => {
+  }
+
+  handleResourceInputChange(event) {
+    this.setState({resourceInputValue: event.target.value});
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
     event.preventDefault();
+  }
+
+  updateGeoInputValue = (text) => {
+    this.setState({geoInputValue: text});
+    this.setState({showSuggestions: false});
   }
 
   render() {
@@ -80,7 +98,7 @@ class ResearchSearchForm extends React.Component {
             </FormLegend>
             <div>
               <div className="radio-group">
-                <input id="affordable-housing" type="radio" name="resource-type" checked/>
+                <input id="affordable-housing" type="radio" name="resource-type" checked onChange={this.handleResourceInputChange}/>
                 <RadioLabel htmlFor="affordable-housing">
                   <FormattedMessage {...messages.resourceLabelHousing} />
                 </RadioLabel>
@@ -98,12 +116,15 @@ class ResearchSearchForm extends React.Component {
         </InputGroup>
         <InputGroup>
           <div>
-            <FormLabel for="geo-input">
+            <FormLabel htmlFor="geo-input">
               2. <FormattedMessage {...messages.geoInputLabel} />
             </FormLabel>
           </div>
           <div>
-            <PlaceInput type="text" id="geo-input" value={this.state.value} onChange={this.handleGeoInputChange} required aria-required="true"/>
+            <PlaceInput type="text" id="geo-input" value={this.state.geoInputValue} onChange={this.handleGeoInputChange} onBlur={this.handleGeoInputBlur} required aria-required="true" autoComplete="off"/>
+            <div>
+              <PlaceList geoInputValue={ this.state.geoInputValue } isShow={ this.state.showSuggestions } updateGeoInputValue={ this.updateGeoInputValue } />
+            </div>
           </div>
         </InputGroup>
         <InputGroup>
