@@ -1,5 +1,6 @@
 import React, { useEffect, memo } from 'react';
 import { FormattedMessage } from 'react-intl';
+import history from 'utils/history';
 import PlaceList from 'components/PlaceList';
 import messages from './messages';
 import styled from 'styled-components';
@@ -80,7 +81,12 @@ class ResearchSearchForm extends React.Component {
   }
 
   handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault(); 
+
+    history.push({
+      pathname: '/search',
+      search: "?geo=" + this.state.geoInputValue + "&resource=" + this.state.resourceInputValue
+    });
   }
 
   updateGeoInputValue = (text) => {
@@ -98,13 +104,13 @@ class ResearchSearchForm extends React.Component {
             </FormLegend>
             <div>
               <div className="radio-group">
-                <input id="affordable-housing" type="radio" name="resource-type" checked onChange={this.handleResourceInputChange}/>
+                <input id="affordable-housing" type="radio" name="resource-type" value="affordable-housing" onChange={ this.handleResourceInputChange.bind(this) } checked={this.state.resourceInputValue === 'affordable-housing'}/>
                 <RadioLabel htmlFor="affordable-housing">
                   <FormattedMessage {...messages.resourceLabelHousing} />
                 </RadioLabel>
               </div>
               <div className="radio-group">
-                <input id="shelter" type="radio" name="resource-type"/>
+                <input id="shelter" type="radio" name="resource-type" value="shelter" onChange={ this.handleResourceInputChange.bind(this) } checked={this.state.resourceInputValue === 'shelter'} />
                 <RadioLabel htmlFor="shelter">
                   <FormattedMessage {...messages.resourceLabelShelter} />
                 </RadioLabel>

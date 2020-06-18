@@ -16,7 +16,6 @@ class PlaceList extends React.Component {
       fetch(url + geoInputValue + "&f=pjson&category=Neighborhood,City,Street Address&countryCode=USA")
       .then(res => res.json())
       .then((data) => {
-        console.log(data["suggestions"]);
         this.setState({suggestions: data["suggestions"]});
       })
       .catch(console.log);
