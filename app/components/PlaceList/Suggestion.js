@@ -8,8 +8,6 @@ const SuggestionItem = styled.div`
 class Suggestion extends React.Component {
   constructor(props) {
     super(props);
-
-    console.log(props)
   }
 
   render() {

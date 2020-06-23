@@ -1,0 +1,44 @@
+{
+  "resources": [
+    {
+      "id": "1",
+      "property_name": "BOOTH MANOR",
+      "address_line_1": "6111 E 129TH ST",
+      "address_line_2": "",
+      "place_base_city_name": "New York",
+      "property_on_site_phone_number": "111.111.1111"
+    },
+    {
+      "id": "2",
+      "property_name": "BOOTH MANOR",
+      "address_line_1": "6111 E 129TH ST",
+      "address_line_2": "",
+      "place_base_city_name": "New York",
+      "property_on_site_phone_number": "111.111.1111"
+    },
+    {
+      "id": "3",
+      "property_name": "BOOTH MANOR",
+      "address_line_1": "6111 E 129TH ST",
+      "address_line_2": "",
+      "place_base_city_name": "New York",
+      "property_on_site_phone_number": "111.111.1111"
+    },
+    {
+      "id": "4",
+      "property_name": "BOOTH MANOR",
+      "address_line_1": "6111 E 129TH ST",
+      "address_line_2": "",
+      "place_base_city_name": "New York",
+      "property_on_site_phone_number": "111.111.1111"
+    },
+    {
+      "id": "5",
+      "property_name": "BOOTH MANOR",
+      "address_line_1": "6111 E 129TH ST",
+      "address_line_2": "",
+      "place_base_city_name": "New York",
+      "property_on_site_phone_number": "111.111.1111"
+    }
+  ]
+}
