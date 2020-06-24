@@ -14,7 +14,7 @@ export default defineMessages({
   },
   bannerHeading: {
     id: `${scope}.banner.heading`,
-    defaultMessage: 'Find Affordable Housing',
+    defaultMessage: 'Find Housing Assitance',
   },
   trymeHeader: {
     id: `${scope}.tryme.header`,

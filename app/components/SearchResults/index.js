@@ -6,6 +6,9 @@ import H1 from 'components/H1';
 import H2 from 'components/H2';
 import ResourceList from 'components/ResourceList';
 
+import Map from 'components/Property/map.png';
+import Img from 'components/Property/Img';
+
 const SplitContainer = styled.div`
   display: flex;
 `;
@@ -14,10 +17,7 @@ const Col = styled.div`
   flex: 1;
   flex-basis: 100%;
   flex-direction: column;
-
-  &:first-child {
-    padding-left: 4rem;
-  }
+  padding-left: 4rem;
 `;
 
 const SearchTitle = styled(H1)`
@@ -43,20 +43,17 @@ class SearchResults extends React.Component {
   }
 
   fetchResults() {
-    const url = "http://localhost:3100/resources";
+    const url = "http://localhost:3100/properties";
     
     fetch(url)
       .then(res => res.json())
       .then((data) => {
-        console.log("State Updated");
         this.setState({results: data});
       })
       .catch(console.log);
   }
 
   render() {
-    console.log("Render");
-    console.log(this.state.results);
     return (
       <SplitContainer>
         <Col>
@@ -67,7 +64,7 @@ class SearchResults extends React.Component {
           <ResourceList results={this.state.results} />
         </Col>
         <Col>
-          lalal
+          <Img src={Map} alt="Map of Seattle" />
         </Col>
       </SplitContainer>
     );

@@ -17,7 +17,7 @@ export default defineMessages({
   },
   resourceLabelShelter: {
     id: `${scope}.resourceType.shelter`,
-    defaultMessage: 'Shelter'
+    defaultMessage: 'Homeless Shelter'
   },
   submitValue: {
     id: `${scope}.submitValue`,

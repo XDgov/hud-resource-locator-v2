@@ -14,6 +14,7 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from 'containers/HomePage/Loadable';
 import FeaturePage from 'containers/FeaturePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import PropertyPage from 'containers/PropertyPage/Loadable';
 import ResultsPage from 'containers/ResultsPage/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -32,16 +33,16 @@ export default function App() {
   return (
     <AppWrapper>
       <Helmet
-        titleTemplate="%s - React.js Boilerplate"
-        defaultTitle="React.js Boilerplate"
+        titleTemplate="%s - HUD Resource Locator"
+        defaultTitle="HUD Resource Locator"
       >
-        <meta name="description" content="A React.js Boilerplate application" />
+        <meta name="description" content="Find housing assistance." />
       </Helmet>
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/features" component={FeaturePage} />
         <Route path="/search" component={ResultsPage} />
+        <Route path="/properties/:slug" component={PropertyPage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />

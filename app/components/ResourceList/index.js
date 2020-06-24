@@ -23,7 +23,7 @@ class ResourceList extends React.Component {
     return(
       <div>
         {this.state.results.map(result => (
-          <Result key={result.id} resource={result} />
+          <Result key={result.attributes.PROPERTY_ID} resource={result} />
         ))}
       </div>
     )

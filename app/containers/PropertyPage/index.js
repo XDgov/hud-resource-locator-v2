@@ -6,12 +6,12 @@
 
 import React from 'react';
 import { withRouter } from "react-router-dom";
-import SearchResults from 'components/SearchResults';
+import Property from 'components/Property';
 
 
-export default function ResultsPage(props) {
+export default function PropertyPage(props) {
 
   return (
-    <SearchResults />
+    <Property />
   );
 }

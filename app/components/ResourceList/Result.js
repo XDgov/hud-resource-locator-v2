@@ -25,22 +25,25 @@ const ResultAddress = styled.p`
 class Result extends React.Component {
   constructor(props) {
     super(props);
-    const address = this.props.resource.address_line_1 + ", " + this.props.resource.place_base_city_name;
+    const address = capitalCase(this.props.resource.attributes.ADDRESS_LINE1_TEXT) + ", " + capitalCase(this.props.resource.attributes.PLACED_BASE_CITY_NAME_TEXT);
 
     this.state = { 
-      property_name: capitalCase(this.props.resource.property_name),
+      property_name: capitalCase(this.props.resource.attributes.PROPERTY_NAME_TEXT),
+      slug: this.props.resource.attributes.PROPERTY_NAME_SLUG,
       address: address,
-      property_on_site_phone_number: this.props.resource.property_on_site_phone_number
+      property_on_site_phone_number: this.props.resource.attributes.PROPERTY_ON_SITE_PHONE_NUMBER
     };
   }
 
   render() {
+    const url = "/properties/" + this.state.slug;
+
     return(
       <ResultItem>
         <ResultTitle>{this.state.property_name}</ResultTitle>
         <ResultAddress>{this.state.address}</ResultAddress>
         <p>Phone: {this.state.property_on_site_phone_number}</p>
-        <A href="#">View property details</A>
+        <A href={ url }>View property details</A>
       </ResultItem>
     );
   }

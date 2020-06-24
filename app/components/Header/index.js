@@ -25,7 +25,7 @@ const AppLogo = styled.div`
 
 const AppLogomark = styled.span`
   display: table-cell;
-  max-width: 75px;
+  max-width: 65px;
 `;
 
 const AppLogotype = styled.span`
@@ -43,7 +43,7 @@ const AppLogotype = styled.span`
 const AppNav = styled.nav`
   align-self: stretch;
   font-size: 0.9rem;
-  padding-top: 1.75rem;
+  padding-top: 1.4rem;
 `;
 
 const NavLink = styled.a`
@@ -75,7 +75,7 @@ function Header() {
         <AppLogo className="app-logo">
           <A href="/">
             <AppLogomark>
-              <Img src={HUDLogo} alt="react-boilerplate - Logo" />
+              <Img src={HUDLogo} alt="Department of Housing and Urban Development" />
             </AppLogomark>
             <AppLogotype>HUD Resource Locator</AppLogotype>
           </A>
