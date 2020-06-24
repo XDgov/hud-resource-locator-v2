@@ -113,7 +113,7 @@ module.exports = options => ({
     // drop any unreachable code.
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development',
-    }),
+    })
   ]),
   resolve: {
     modules: ['node_modules', 'app'],

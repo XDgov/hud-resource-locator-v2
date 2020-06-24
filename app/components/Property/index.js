@@ -5,6 +5,7 @@ import { faPrint } from '@fortawesome/free-solid-svg-icons'
 import { parse } from "query-string";
 import styled from 'styled-components';
 import { withRouter } from "react-router-dom";
+import { loadModules } from 'esri-loader';
 
 import Map from './map.png';
 import Img from './Img';
@@ -23,6 +24,10 @@ const Col = styled.div`
   flex-basis: 100%;
   flex-direction: column;
   padding-left: 4rem;
+`;
+
+const MapContainer = styled.div`
+  height:600px;
 `;
 
 const ButtonSpan = styled.span`
@@ -66,6 +71,88 @@ class Property extends React.Component {
           propertyAddress:  data[0].attributes.ADDRESS_LINE1_TEXT + ", " + data[0].attributes.PLACED_BASE_CITY_NAME_TEXT,
           propertyName: capitalCase(data[0].attributes.PROPERTY_NAME_TEXT)
         });
+
+        loadModules([
+          'esri/Map',
+          'esri/layers/GeoJSONLayer',
+          'esri/views/MapView',
+        ]).then(([Map, GeoJSONLayer, MapView]) => {
+
+          const url =
+            "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson";
+
+          // Paste the url into a browser's address bar to download and view the attributes
+          // in the GeoJSON file. These attributes include:
+          // * mag - magnitude
+          // * type - earthquake or other event such as nuclear test
+          // * place - location of the event
+          // * time - the time of the event
+          // Use the Arcade Date() function to format time field into a human-readable format
+
+          const template = {
+            title: "Earthquake Info",
+            content: "Magnitude {mag} {type} hit {place} on {time}",
+            fieldInfos: [
+              {
+                fieldName: "time",
+                format: {
+                  dateFormat: "short-date-short-time"
+                }
+              }
+            ]
+          };
+
+          const renderer = {
+            type: "simple",
+            field: "mag",
+            symbol: {
+              type: "simple-marker",
+              color: "orange",
+              outline: {
+                color: "white"
+              }
+            },
+            visualVariables: [
+              {
+                type: "size",
+                field: "mag",
+                stops: [
+                  {
+                    value: 2.5,
+                    size: "4px"
+                  },
+                  {
+                    value: 8,
+                    size: "40px"
+                  }
+                ]
+              }
+            ]
+          };
+
+          const geojsonLayer = new GeoJSONLayer({
+            url: url,
+            copyright: "USGS Earthquakes",
+            popupTemplate: template,
+            renderer: renderer //optional
+          });
+
+          const map = new Map({
+            basemap: "gray",
+            layers: [geojsonLayer]
+          });
+
+          const view = new MapView({
+            container: "map",
+            center: [-168, 46],
+            zoom: 3,
+            map: map
+          });
+        })
+        .catch(err => {
+          console.log("Erorr Happened");
+          console.error(err);
+        });
       })
       .catch(console.log);
   }
@@ -98,6 +185,7 @@ class Property extends React.Component {
                 paid to the building owner. For more information on HUD rental 
                 assistance programs go here.
               </p>
+              <MapContainer id="map" />
             </section>
           </PropertyDetails>
         </Col>
